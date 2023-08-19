@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BookStore.Core.Entities.Models.Bookitem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Books </h1>
+
+<p>
+    <a asp-action="Create" class="btn-success">Add New</a>
+</p>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-3 mb-3">
+            <div class="card">
+                <img class="card-img-top" src="@item.ImageUrl" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">@item.Author</h6>
+                    <p class="card-text">@item.Content</p>
+                    <ul class="list-group list-group-flush">
+                 <li class="list-group-item">Published date :@item.PublishedDate.ToString()</li>
+                 </ul>
+                    <p>@Html.ActionLink("Edit", "Edit", new {id=item.Id}) |</p>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+
+
+
+
+
+
+
+
+           @* <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+     
