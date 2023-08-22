@@ -1,0 +1,18 @@
+﻿@model BookStore.Core.Entities.Models.Bookitem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Model.Title</h1>
+
+<div>
+    <h4 ">@Model.Author</h4>
+    <img class="card-img" height="400px" src="@Model.ImageUrl" alt="Card image">
+    <div class="s">@Model.PublishedDate</div>
+    <hr />
+    <p>
+        @Model.Content
+    </p>
+   
+</div>
